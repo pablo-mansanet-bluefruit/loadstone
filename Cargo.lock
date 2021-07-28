@@ -102,8 +102,6 @@ dependencies = [
 [[package]]
 name = "blue_hal"
 version = "1.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c933e92b6104a582f3ddb367aac39156ef29314b20160abb585d5730f9c77b66"
 dependencies = [
  "bytemuck",
  "cortex-m 0.7.3",
