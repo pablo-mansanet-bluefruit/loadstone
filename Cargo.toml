@@ -20,9 +20,9 @@ default = [
 # The features below reflect the hierarchy of stm32 families.
 # Choosing a f4 family implies f4, which implies stm32, which
 # implies cortex M...
+stm32f446_manual = ["stm32f446"]
 stm32f429 = ["blue_hal/stm32f429", "stm32f4_any"]
 stm32f446 = ["blue_hal/stm32f446", "stm32f4_any"]
-stm32f446_manual = ["blue_hal/stm32f446", "stm32f4_any"]
 stm32f469 = ["blue_hal/stm32f469", "stm32f4_any"]
 stm32f407 = ["blue_hal/stm32f407", "stm32f4_any"]
 stm32f412 = ["blue_hal/stm32f412", "stm32f4_any"]
