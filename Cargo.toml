@@ -81,8 +81,8 @@ features = ["ecdsa", "sha256", "pem"]
 optional = true
 
 [dependencies.blue_hal]
-#version = "1.0.0"
-path = "blue_hal"
+git = "https://github.com/absw/blue_hal.git"
+branch = "main"
 
 [dependencies.ufmt]
 version = "0.1.*"
