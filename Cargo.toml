@@ -14,7 +14,6 @@ exclude = ["docker/*", "docs/*", "documentation/*", "svd/*"]
 [features]
 default = [
    "defmt-default",
-   "stm32f446_manual"
 ]
 
 # The features below reflect the hierarchy of stm32 families.
