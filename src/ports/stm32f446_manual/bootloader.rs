@@ -33,7 +33,7 @@ impl Default for Bootloader<ExternalFlash, flash::McuFlash, Serial, SysTick, Ima
     fn default() -> Self { Self::new() }
 }
 
-const NUMBER_OF_MCU_BANKS: usize = 1usize;
+pub const NUMBER_OF_MCU_BANKS: usize = 1usize;
 pub static MCU_BANKS: [image::Bank<flash::Address>; NUMBER_OF_MCU_BANKS] = [image::Bank {
     index: 1u8,
     bootable: true,
