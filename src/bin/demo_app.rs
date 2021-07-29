@@ -6,7 +6,7 @@
 use cortex_m_rt::{entry, exception};
 pub const HEAP_SIZE_BYTES: usize = 8192;
 
-#[cfg(all(target_arch = "arm", feature = "stm32f412"))]
+#[cfg(all(target_arch = "arm", any(feature = "stm32f412", feature = "stm32f446")))]
 #[entry]
 fn main() -> ! {
     let heap_start = cortex_m_rt::heap_start() as usize;
