@@ -18,7 +18,8 @@ fn process_configuration_file() -> Result<()> {
 
     let configuration: Configuration = if let Ok(config) = std::env::var("LOADSTONE_CONFIG") {
         if config.is_empty() {
-            return Ok(()); // Assuming tests
+            copy_memory_file()?;
+            return Ok(());
         } else {
             ron::from_str(&config)?
         }
@@ -37,6 +38,21 @@ fn process_configuration_file() -> Result<()> {
     generate_modules(env!("CARGO_MANIFEST_DIR"), &configuration)?;
     configure_runner(&configuration.port.to_string());
 
+    Ok(())
+}
+
+fn copy_memory_file() -> Result<()> {
+    // Slightly hacky way to generate memory files for manual ports.
+    // TODO generalize this.
+    #[cfg(feature = "stm32f446_manual")]
+    copy_stm32f446_manual_memory_file()?;
+
+    Ok(())
+}
+
+#[cfg(feature = "stm32f446_manual")]
+fn copy_stm32f446_manual_memory_file() -> Result<()> {
+    std::fs::copy("src/ports/stm32f446_manual/memory.x", "memory.x")?;
     Ok(())
 }
 
